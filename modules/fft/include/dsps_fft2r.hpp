@@ -68,7 +68,7 @@ static inline int16_t xtfixed_bf_4(int16_t a0, int16_t a1, int16_t a2, int16_t a
 /// \arg in_data Input buffer storing signal in ReImReIm layout
 ///
 template <class T>
-esp_err_t dsps_fft2r_sc16_ansi_step(T in_data, int N, int16_t* sc_table)
+esp_err_t dsps_fft2r_sc16_ansi_step(T in_data, int N, const int16_t* sc_table)
 {
     if (!dsp_is_power_of_two(N)) {
         return ESP_ERR_DSP_INVALID_LENGTH;
@@ -123,7 +123,7 @@ esp_err_t dsps_fft2r_sc16_ansi_step(T in_data, int N, int16_t* sc_table)
 /// \arg data Input buffer storing signal in ReImReIm layout
 ///
 template <class T>
-esp_err_t dsps_fft2r_fc32_ansi_step(T *data, int N, float *w)
+esp_err_t dsps_fft2r_fc32_ansi_step(T *data, int N, const float *w)
 {
     if (!dsp_is_power_of_two(N)) {
         return ESP_ERR_DSP_INVALID_LENGTH;
