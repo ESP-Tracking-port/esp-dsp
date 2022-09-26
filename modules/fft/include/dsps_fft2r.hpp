@@ -161,7 +161,7 @@ esp_err_t dsps_fft2r_fc32_ansi_step(T *data, int N, const float *w)
 }
 
 template <class T>
-esp_err_t dsps_bit_rev_fc32_ansi(T data, int N)
+esp_err_t dsps_bit_rev_fc32_ansi_step(T data, int N)
 {
     if (!dsp_is_power_of_two(N)) {
         return ESP_ERR_DSP_INVALID_LENGTH;
