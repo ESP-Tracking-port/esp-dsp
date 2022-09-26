@@ -119,6 +119,9 @@ esp_err_t dsps_fft2r_sc16_ansi_step(T in_data, int N, int16_t* sc_table)
 	return result;
 }
 
+/// \tparam T An entity mocking a pointer type through implementing operator[].
+/// \arg data Input buffer storing signal in ReImReIm layout
+///
 template <class T>
 esp_err_t dsps_fft2r_fc32_ansi_step(T *data, int N, float *w)
 {
