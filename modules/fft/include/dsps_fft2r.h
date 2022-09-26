@@ -95,6 +95,7 @@ esp_err_t dsps_fft2r_fc32_ansi_(float *data, int N, float *w);
 esp_err_t dsps_fft2r_fc32_ae32_(float *data, int N, float *w);
 esp_err_t dsps_fft2r_fc32_aes3_(float *data, int N, float *w);
 esp_err_t dsps_fft2r_sc16_ansi_(int16_t *data, int N, int16_t *w);
+esp_err_t dsps_fft2r_fft2_sc16_ansi_(int16_t *data, int rows, int cols, int16_t *w);
 esp_err_t dsps_fft2r_sc16_ae32_(int16_t *data, int N, int16_t *w);
 esp_err_t dsps_fft2r_sc16_aes3_(int16_t *data, int N, int16_t *w);
 /**@}*/

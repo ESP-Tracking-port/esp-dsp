@@ -126,6 +126,7 @@ void dsps_fft2r_deinit_fc32()
 esp_err_t dsps_fft2r_fc32_ansi_(float *data, int N, float *w)
 {
     if (!dsp_is_power_of_two(N)) {
+    	assert(false);
         return ESP_ERR_DSP_INVALID_LENGTH;
     }
     if (!dsps_fft2r_initialized) {

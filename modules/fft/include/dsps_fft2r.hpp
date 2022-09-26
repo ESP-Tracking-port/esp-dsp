@@ -64,6 +64,9 @@ static inline int16_t xtfixed_bf_4(int16_t a0, int16_t a1, int16_t a2, int16_t a
 	return (int16_t)result;
 }
 
+/// \tparam T An entity mocking a pointer type through implementing operator[].
+/// \arg in_data Input buffer storing signal in ReImReIm layout
+///
 template <class T>
 esp_err_t dsps_fft2r_sc16_ansi_step(T in_data, int N, int16_t* sc_table)
 {
