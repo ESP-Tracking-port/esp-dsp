@@ -160,4 +160,35 @@ esp_err_t dsps_fft2r_fc32_ansi_step(T *data, int N, const float *w)
     return result;
 }
 
+template <class T>
+esp_err_t dsps_bit_rev_fc32_ansi(T data, int N)
+{
+    if (!dsp_is_power_of_two(N)) {
+        return ESP_ERR_DSP_INVALID_LENGTH;
+    }
+
+    esp_err_t result = ESP_OK;
+
+    int j, k;
+    float r_temp, i_temp;
+    j = 0;
+    for (int i = 1; i < (N - 1); i++) {
+        k = N >> 1;
+        while (k <= j) {
+            j -= k;
+            k >>= 1;
+        }
+        j += k;
+        if (i < j) {
+            r_temp = data[j * 2];
+            data[j * 2] = data[i * 2];
+            data[i * 2] = r_temp;
+            i_temp = data[j * 2 + 1];
+            data[j * 2 + 1] = data[i * 2 + 1];
+            data[i * 2 + 1] = i_temp;
+        }
+    }
+    return result;
+}
+
 #endif // _dsps_fft2r_HPP_
