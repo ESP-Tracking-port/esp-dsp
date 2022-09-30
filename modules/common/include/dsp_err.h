@@ -17,7 +17,7 @@
 #define _DSP_ERR_H_
 
 #include "stdint.h"
-#include "esp_err.h"
-#include "dsp_err_codes.h"
+#include "./esp_err.h"
+#include "./dsp_err_codes.h"
 
 #endif // _DSP_ERR_H_
